@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
+import 'components/animatedBtn.dart';
+import 'components/singInForm.dart';
+
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -11,6 +14,17 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
+  late RiveAnimationController _btnAnimationController;
+
+  @override
+  void initState() {
+    _btnAnimationController = OneShotAnimation(
+      "active",
+      autoplay: false,
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,12 +49,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: const SizedBox(),
             ),
           ),
-          const SafeArea(
+          SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const Spacer(),
+                  const SizedBox(
                     width: 260,
                     child: Column(
                       children: [
@@ -54,9 +70,89 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                         ),
                         SizedBox(height: 16),
-                        Text("Si quieres conocer un poco mas sobre los dias que tienes pico y placa en tus diferentes vehiculos, gestionar tus horarios y planificar tus salidas, esta es la aplicacion que necesitas")
+                        Text(
+                            "Si quieres conocer un poco mas sobre los dias que tienes pico y placa en tus diferentes vehiculos, gestionar tus horarios y planificar tus salidas, esta es la aplicacion que necesitas")
                       ],
                     ),
+                  ),
+                  const Spacer(flex: 2),
+                  AnimatedBtn(
+                    btnAnimationController: _btnAnimationController,
+                    press: () {
+                      _btnAnimationController.isActive = true;
+                      showGeneralDialog(
+                        barrierDismissible: true,
+                        barrierLabel: "Ingresar",
+                        context: context,
+                        pageBuilder: (context, _, __) => Center(
+                          child: Container(
+                            height: 620,
+                            margin: const EdgeInsets.symmetric(horizontal: 16),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 32,
+                              vertical: 24,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.94),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(40),
+                              ),
+                            ),
+                            child: const Scaffold(
+                              backgroundColor: Colors.transparent,
+                              body: Column(
+                                children: [
+                                  Text(
+                                    "Ingresar",
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontFamily: "Poppins",
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(16),
+                                    child: Text(
+                                      "Ingresa a tu cuenta para poder gestionar tus horarios y planificar tus salidas",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  SingInForm(),
+                                  Row(
+                                    children: [
+                                      Expanded(child: Divider()),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(horizontal: 8),
+                                        child: Text(
+                                          "O ingrese con",
+                                          style: TextStyle(
+                                            color: Colors.black26,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(child: Divider()),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 20,
+                                    ),
+                                    child: Text("Ingresa con Email o Google",
+                                        style:
+                                            TextStyle(color: Colors.black54)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 24),
+                    child: Text(
+                        "Trabajo final desarrollado movil programado por: Joan Nicolas Cifuentes Narvaez, Julian Izasa Gomez y Jose Santiago Pelaez Ramirez"),
                   ),
                 ],
               ),
