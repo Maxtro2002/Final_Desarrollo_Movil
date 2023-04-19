@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:rive_animation/screens/onboding/components/singInForm.dart';
 
 Future<Object?> CustomSingInDialog(BuildContext context, {required ValueChanged onClosed}) {
@@ -35,70 +34,31 @@ Future<Object?> CustomSingInDialog(BuildContext context, {required ValueChanged 
               Radius.circular(40),
             ),
           ),
-          child: Scaffold(
+          child: const Scaffold(
             backgroundColor: Colors.transparent,
             body: Stack(
               clipBehavior: Clip.none,
               children: [
                 Column(
                   children: [
-                    const Text(
+                    Text(
                       "Ingresar",
                       style: TextStyle(
                         fontSize: 30,
                         fontFamily: "Poppins",
                       ),
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(16),
                       child: Text(
                         "Ingresa a tu cuenta para poder gestionar tus horarios y planificar tus salidas",
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const SingInForm(),
-                    const Row(
-                      children: [
-                        Expanded(child: Divider()),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: Text(
-                            "O ingrese con",
-                            style: TextStyle(
-                              color: Colors.black26,
-                            ),
-                          ),
-                        ),
-                        Expanded(child: Divider()),
-                      ],
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 24,
-                      ),
-                      child: Text("Ingresa con Email o Google",
-                          style: TextStyle(color: Colors.black54)),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          padding: EdgeInsets.zero,
-                          onPressed: () {},
-                          icon: SvgPicture.asset("assets/icons/email_box.svg",
-                              height: 64, width: 64),
-                        ),
-                        IconButton(
-                          padding: EdgeInsets.zero,
-                          onPressed: () {},
-                          icon: SvgPicture.asset("assets/icons/google_box.svg",
-                              height: 64, width: 64),
-                        ),
-                      ],
-                    )
+                    SingInForm(),
                   ],
                 ),
-                const Positioned(
+                Positioned(
                   left: 0,
                   right: 0,
                   bottom: -40,

@@ -5,6 +5,7 @@ import 'package:rive/rive.dart';
 
 import 'components/animatedBtn.dart';
 import 'components/customSingInDialog.dart';
+import 'components/singInForm.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
