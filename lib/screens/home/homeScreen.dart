@@ -1,0 +1,91 @@
+import 'package:flutter/material.dart';
+import 'package:rive_animation/models/placa.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                "Informacion",
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineMedium!
+                    .copyWith(color: Colors.black, fontWeight: FontWeight.w600),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    ...List.generate(
+                      userVehicles.length,
+                      (index) => Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Container(
+                          height: 200,
+                          width: double.infinity,
+                          decoration: const BoxDecoration(
+                            color: Colors.amberAccent,
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: RichText(
+                              text: TextSpan(
+                                text:
+                                    "Placa: ${userVehicles[index].carPlateLetter} ${userVehicles[index].carPlateNumbers}",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineMedium!
+                                    .copyWith(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 20),
+                                children: [
+                                  TextSpan(
+                                    text:
+                                        "Propietario: ${userVehicles[index].propetary}",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium!
+                                        .copyWith(
+                                            color: Colors.black26,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 10),
+                                  ),
+                                  TextSpan(
+                                    text:
+                                        "Tipo de vehiculo: ${userVehicles[index].vehicleTyper}",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium!
+                                        .copyWith(
+                                            color: Colors.black26,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 10),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
