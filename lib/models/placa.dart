@@ -17,7 +17,9 @@ class Plate {
 
 List<Plate> userVehicles = [
   Plate(carPlateLetter: "ABC", carPlateNumbers: "123", vehicleTyper: "Carro", propetary: "Fede"),
-  Plate(carPlateLetter: "XYC", carPlateNumbers: "78E", vehicleTyper: "MOTO", propetary: "Yoan"),
+  Plate(carPlateLetter: "XYC", carPlateNumbers: "78E", vehicleTyper: "Moto", propetary: "Yoan"),
+  Plate(carPlateLetter: "ASF", carPlateNumbers: "653", vehicleTyper: "Carro", propetary: "Jules"),
   Plate(carPlateLetter: "ASF", carPlateNumbers: "653", vehicleTyper: "Carro", propetary: "Jules")
+
 
 ];

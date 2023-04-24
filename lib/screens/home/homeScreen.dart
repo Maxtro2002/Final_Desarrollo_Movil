@@ -36,43 +36,55 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.amberAccent,
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: RichText(
-                              text: TextSpan(
-                                text:
-                                    "Placa: ${userVehicles[index].carPlateLetter} ${userVehicles[index].carPlateNumbers}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineMedium!
-                                    .copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 20),
-                                children: [
-                                  TextSpan(
-                                    text:
-                                        "Propietario: ${userVehicles[index].propetary}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineMedium!
-                                        .copyWith(
-                                            color: Colors.black26,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 10),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        "Tipo de vehiculo: ${userVehicles[index].vehicleTyper}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineMedium!
-                                        .copyWith(
-                                            color: Colors.black26,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 10),
-                                  )
-                                ],
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: RichText(
+                                text: TextSpan(
+                                  text: "Placa:",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium!
+                                      .copyWith(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 20),
+                                  children: [
+                                    TextSpan(
+                                      text:
+                                          "${userVehicles[index].carPlateLetter}-${userVehicles[index].carPlateNumbers}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineMedium!
+                                          .copyWith(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 30),
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          "\nPropietario: ${userVehicles[index].propetary}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineMedium!
+                                          .copyWith(
+                                              color: Colors.black26,
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 15),
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          "\nTipo de vehiculo: ${userVehicles[index].vehicleTyper}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineMedium!
+                                          .copyWith(
+                                              color: Colors.black26,
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 15),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
