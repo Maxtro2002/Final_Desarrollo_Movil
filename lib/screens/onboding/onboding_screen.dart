@@ -5,7 +5,6 @@ import 'package:rive/rive.dart';
 
 import 'components/animatedBtn.dart';
 import 'components/customSingInDialog.dart';
-import 'components/singInForm.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -87,7 +86,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       btnAnimationController: _btnAnimationController,
                       press: () {
                         _btnAnimationController.isActive = true;
-                        Future.delayed(Duration(milliseconds: 800), () {
+                        Future.delayed(const Duration(milliseconds: 800), () {
                           setState(() {
                             isSignInDialogShow = true;
                           });

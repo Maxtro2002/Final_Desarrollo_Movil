@@ -15,7 +15,7 @@ class SingInForm extends StatefulWidget {
 }
 
 class _SingInFormState extends State<SingInForm> {
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool isShowLoading = false;
   bool isShowConfetti = false;
@@ -47,12 +47,12 @@ class _SingInFormState extends State<SingInForm> {
               confetti.fire();
 
               Future.delayed(
-                Duration(seconds: 1),
+                const Duration(seconds: 1),
                 () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => EntryPoint(),
+                        builder: (context) => const EntryPoint(),
                       ));
                 },
               );
@@ -88,7 +88,7 @@ class _SingInFormState extends State<SingInForm> {
                 child: TextFormField(
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Please enter your email";
+                      return "Por favor ingrese su correo electrónico";
                     }
                     return null;
                   },
@@ -106,7 +106,7 @@ class _SingInFormState extends State<SingInForm> {
                 child: TextFormField(
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Please enter your email";
+                      return "Por favor ingrese su contraseña";
                     }
                     return null;
                   },
@@ -179,7 +179,7 @@ class _SingInFormState extends State<SingInForm> {
                   ),
                 ),
               )
-            : SizedBox(),
+            : const SizedBox(),
       ],
     );
   }
