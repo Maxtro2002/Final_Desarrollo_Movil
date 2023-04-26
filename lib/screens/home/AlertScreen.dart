@@ -37,7 +37,8 @@ class AlertsScreen extends StatelessWidget {
                           width: 2,
                         ),
                         color: Colors.lightGreen.shade200,
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Center(
                         child: Padding(
@@ -64,14 +65,15 @@ class AlertsScreen extends StatelessWidget {
                                           fontSize: 20),
                                 ),
                                 TextSpan(
-                                  text: " PARA EL DIA ${userAlerts[index].weekDay}",
+                                  text:
+                                      " PARA EL DIA ${userAlerts[index].weekDay}",
                                   style: Theme.of(context)
-                                  .textTheme
-                                  .headlineMedium!
-                                  .copyWith(
-                                      color: Colors.red,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 20),
+                                      .textTheme
+                                      .headlineMedium!
+                                      .copyWith(
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 20),
                                 ),
                               ],
                             ),

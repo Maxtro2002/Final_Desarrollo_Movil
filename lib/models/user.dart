@@ -15,6 +15,6 @@ List<User> tempUsers = [
       name: "Santiago",
       email: "jspr200231@gmail.com",
       password: "123456789",
-      phone: "3000000000",
+      phone: "300 1233123",
       address: "Calle 1 # 1-1"),
 ];

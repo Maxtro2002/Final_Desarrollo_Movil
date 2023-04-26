@@ -38,7 +38,7 @@ class _SingInFormState extends State<SingInForm> {
         if (_formKey.currentState!.validate()) {
           check.fire();
           Future.delayed(
-            const Duration(seconds: 2),
+            const Duration(seconds: 1),
             () {
               setState(() {
                 isShowLoading = false;
@@ -61,7 +61,7 @@ class _SingInFormState extends State<SingInForm> {
         } else {
           error.fire();
           Future.delayed(
-            const Duration(seconds: 2),
+            const Duration(seconds: 1),
             () {
               setState(() {
                 isShowLoading = false;
