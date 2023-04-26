@@ -4,6 +4,11 @@ import 'package:rive_animation/constants.dart';
 import 'package:rive_animation/screens/home/homeScreen.dart';
 import 'package:rive_animation/utils/riveUtils.dart';
 
+import 'package:rive_animation/screens/home/AlertScreen.dart';
+import 'package:rive_animation/screens/home/NotificationScreen.dart';
+import 'package:rive_animation/screens/home/UserScreen.dart';
+
+
 import 'components/animatedBar.dart';
 import 'models/riveAsset.dart';
 
@@ -16,10 +21,18 @@ class EntryPoint extends StatefulWidget {
 
 class _EntryPointState extends State<EntryPoint> {
   RiveAsset selectedButtonNav = bottomNavs.first;
+  int _actualPage = 0;
+
+  final List<Widget> _pages = [
+    const HomeScreen(),
+    const Alerts(),
+    const Notifications(),
+    const Users()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const HomeScreen(),
+      body: _pages[_actualPage],
       bottomNavigationBar: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(12),
@@ -39,6 +52,7 @@ class _EntryPointState extends State<EntryPoint> {
                     if (bottomNavs[index] != selectedButtonNav) {
                       setState(() {
                         selectedButtonNav = bottomNavs[index];
+                        _actualPage = index;
                       });
                     }
                     Future.delayed(const Duration(seconds: 1), () {
@@ -80,4 +94,3 @@ class _EntryPointState extends State<EntryPoint> {
     );
   }
 }
-
