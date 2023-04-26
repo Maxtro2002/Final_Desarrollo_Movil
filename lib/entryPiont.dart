@@ -25,9 +25,9 @@ class _EntryPointState extends State<EntryPoint> {
 
   final List<Widget> _pages = [
     const HomeScreen(),
-    const Alerts(),
-    const Notifications(),
-    const Users()];
+    const AlertsScreen(),
+    const NotificationsScreen(),
+    const UsersScreen()];
 
   @override
   Widget build(BuildContext context) {
