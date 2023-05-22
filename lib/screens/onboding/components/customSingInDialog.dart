@@ -58,19 +58,6 @@ Future<Object?> CustomSingInDialog(BuildContext context, {required ValueChanged 
                     SingInForm(),
                   ],
                 ),
-                Positioned(
-                  left: 0,
-                  right: 0,
-                  bottom: -40,
-                  child: CircleAvatar(
-                    radius: 16,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.close,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

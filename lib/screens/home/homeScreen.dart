@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rive_animation/models/placa.dart';
+import 'package:rive_animation/screens/home/createPlate.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -126,8 +127,10 @@ class HomeScreen extends StatelessWidget {
               right: 16,
               child: FloatingActionButton(
                 onPressed: () {
-                  // Acción al presionar el botón
-                  print('Botón presionado');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
                 },
                 child: Icon(Icons.add),
                 backgroundColor: Colors.green,

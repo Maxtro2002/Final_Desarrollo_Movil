@@ -13,8 +13,8 @@ class User {
 List<User> tempUsers = [
   User(
       name: "Santiago",
-      email: "jspr200231@gmail.com",
+      email: "test@test.com",
       password: "123456789",
-      phone: "300 1233123",
+      phone: "3001233123",
       address: "Calle 1 # 1-1"),
 ];

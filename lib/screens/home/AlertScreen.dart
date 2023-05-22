@@ -56,7 +56,7 @@ class AlertsScreen extends StatelessWidget {
                                         ),
                                     children: [
                                       TextSpan(
-                                        text: userAlerts[index].AlertNotification,
+                                        text: userAlerts[index].alertNotification,
                                         style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w200,
