@@ -2,17 +2,15 @@ import 'package:rive/rive.dart';
 
 class Plate {
   final String carPlateLetter, carPlateNumbers, vehicleTyper, propetary;
-  late SMIBool? input;
+
 
   Plate(
       {required this.carPlateLetter,
       required this.carPlateNumbers,
       required this.vehicleTyper,
-      required this.propetary, this.input});
+      required this.propetary});
 
-  set setInput(SMIBool status) {
-    input = status;
-  }
+
 }
 
 List<Plate> userVehicles = [
