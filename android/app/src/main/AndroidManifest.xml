@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rive_animation">
-   <application
-        android:label="Final_Movil"
+    package="com.example.finaldesarrollomovil">
+    <application
+        android:label="finaldesarrollomovil"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

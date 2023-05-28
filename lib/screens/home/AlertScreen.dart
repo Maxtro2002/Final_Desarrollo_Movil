@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rive_animation/models/alerts.dart';
+import 'package:rive_animation/screens/home/createPlate.dart';
 
 class AlertsScreen extends StatelessWidget {
   const AlertsScreen({super.key});
@@ -87,17 +88,19 @@ class AlertsScreen extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 16,
-          right: 16,
-          child: FloatingActionButton(
-            onPressed: () {
-              // Acción al presionar el botón
-              print('Botón presionado');
-            },
-            backgroundColor: Colors.green, // Color del botón
-            child: Icon(Icons.add),
-          ),
-        ),
+              bottom: 16,
+              right: 16,
+              child: FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
+                },
+                child: Icon(Icons.add),
+                backgroundColor: Colors.green,
+              ),
+            ),
       ],
     ),
   ),

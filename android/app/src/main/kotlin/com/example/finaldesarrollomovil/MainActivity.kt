@@ -1,4 +1,4 @@
-package com.example.rive_animation
+package com.example.finaldesarrollomovil
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rive_animation/models/notifications.dart';
+import 'package:rive_animation/screens/home/createPlate.dart';
 
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({super.key});
@@ -117,11 +118,13 @@ class NotificationsScreen extends StatelessWidget {
               right: 16,
               child: FloatingActionButton(
                 onPressed: () {
-                  // Acción al presionar el botón
-                  print('Botón presionado');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
                 },
-                backgroundColor: Colors.green, // Color del botón
                 child: Icon(Icons.add),
+                backgroundColor: Colors.green,
               ),
             ),
           ],
