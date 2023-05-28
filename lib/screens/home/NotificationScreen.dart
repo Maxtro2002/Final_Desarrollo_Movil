@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rive_animation/models/notifications.dart';
 import 'package:rive_animation/screens/home/createPlate.dart';
+import 'package:rive_animation/screens/onboding/onboding_screen.dart';
 
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({super.key});
@@ -123,8 +124,29 @@ class NotificationsScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const MyFormPage()),
                   );
                 },
-                child: Icon(Icons.add),
+                child: const Icon(Icons.add),
                 backgroundColor: Colors.green,
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const OnboardingScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    shape: const CircleBorder(),
+                    padding: const EdgeInsets.all(16),
+                  ),
+                  child: const Icon(Icons.exit_to_app_outlined),
+                ),
               ),
             ),
           ],
