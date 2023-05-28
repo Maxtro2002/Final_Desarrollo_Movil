@@ -1,16 +1,59 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore_for_file: depend_on_referenced_packages
 
-FirebaseFirestore firestore = FirebaseFirestore.instance;
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-Future<List> getPlaca() async {
-  List placa = [];
-  CollectionReference collectionReferencePlaca = firestore.collection('placa');
+class FirebaseService {
+  static firebaseIni() async {
+    try {
+      FirebaseApp app = await Firebase.initializeApp();
+      return app;
+    } catch (e) {
+      return null;
+    }
+  }
 
-  QuerySnapshot queryPlaca = await collectionReferencePlaca.get();
+  static Future<User?> signInWithGoogle() async {
+    try {
+      // Trigger the authentication flow
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-  queryPlaca.docs.forEach((element) {
-    placa.add(element.data());
-  });
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
 
-  return placa;
+      // Create a new credential
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      return userCredential.user;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  static Future<String?> getUserName() async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        return user.displayName;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      return null;
+    }
+  }
+
+  static Future<void> signOut() async {
+    await GoogleSignIn().signOut();
+    await FirebaseAuth.instance.signOut();
+  }
 }

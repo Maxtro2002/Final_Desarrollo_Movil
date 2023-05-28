@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "917931441825",
+    "project_id": "pico-app-e0019",
+    "storage_bucket": "pico-app-e0019.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917931441825:android:880a9bfe5c0d7bc03efae0",
+        "android_client_info": {
+          "package_name": "com.example.rive_animation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917931441825-k89kkhes6omfvp9p4rfmlkm1k8ng677v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEPrg3d9rw4rV09O7ccBQniPNFVOlndOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917931441825-5ircu4m8r8t2f3e3kduf98ccml64aaeb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "917931441825-jqgv8i6dhlvijb8jf3ti5te9nuh955pp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.riveAnimation"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

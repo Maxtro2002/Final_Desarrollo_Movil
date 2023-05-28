@@ -40,6 +40,7 @@ class _MyFormPageState extends State<MyFormPage> {
           vehicleTyper: vehicleType,
           propetary: propietary));
 
+
       // Clear the form fields
       carPlateLetterController.clear();
       carPlateNumbersController.clear();
