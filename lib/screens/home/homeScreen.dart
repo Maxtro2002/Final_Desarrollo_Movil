@@ -41,6 +41,7 @@ class HomeScreen extends StatelessWidget {
                                           actions: [
                                             ElevatedButton(
                                               onPressed: () {
+                                                userVehicles.removeAt(index);
                                                 Navigator.pop(context);
                                               },
                                               style: ElevatedButton.styleFrom(
@@ -182,7 +183,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => OnboardingScreen()),
+                          builder: (context) => const OnboardingScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

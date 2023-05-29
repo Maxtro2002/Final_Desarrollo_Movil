@@ -44,6 +44,7 @@ class AlertsScreen extends StatelessWidget {
                                       actions: [
                                         ElevatedButton(
                                           onPressed: () {
+                                            userAlerts.removeAt(index);
                                             Navigator.pop(context);
                                           },
                                           style: ElevatedButton.styleFrom(
