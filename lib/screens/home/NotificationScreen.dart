@@ -29,77 +29,85 @@ class NotificationsScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       child: Column(
                         children: [
                           ...List.generate(
                             userNotifications.length,
-                            (index) => Container(
-                              padding: EdgeInsets.all(12),
+                            (index) => ElevatedButton(
+                              onPressed: () {
+                                    print("presionado la notificacion $index");
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                  ),
                               child: Container(
                                 padding: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 2,
+                                child: Container(
+                                  padding: EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 2,
+                                    ),
+                                    color: Colors.lightGreen.shade200,
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(20)),
                                   ),
-                                  color: Colors.lightGreen.shade200,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(20)),
-                                ),
-                                child: Center(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(12),
-                                    child: RichText(
-                                      text: TextSpan(
-                                        text:
-                                            "${userNotifications[index].title}: ",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headlineMedium!
-                                            .copyWith(
-                                              color: Colors.green,
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 20,
+                                  child: Center(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(12),
+                                      child: RichText(
+                                        text: TextSpan(
+                                          text:
+                                              "${userNotifications[index].title}: ",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headlineMedium!
+                                              .copyWith(
+                                                color: Colors.green,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 20,
+                                              ),
+                                          children: [
+                                            TextSpan(
+                                              text: userNotifications[index]
+                                                  .desciption,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headlineMedium!
+                                                  .copyWith(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 20,
+                                                  ),
                                             ),
-                                        children: [
-                                          TextSpan(
-                                            text: userNotifications[index]
-                                                .desciption,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headlineMedium!
-                                                .copyWith(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 20,
-                                                ),
-                                          ),
-                                          TextSpan(
-                                            text:
-                                                "\n\nFecha límite de pago: ${userNotifications[index].limitDate}",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headlineMedium!
-                                                .copyWith(
-                                                  color: Colors.red,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 10,
-                                                ),
-                                          ),
-                                          TextSpan(
-                                            text:
-                                                "\nFecha de pago anterior: ${userNotifications[index].paimentDate}",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headlineMedium!
-                                                .copyWith(
-                                                  color: Colors.grey,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 10,
-                                                ),
-                                          ),
-                                        ],
+                                            TextSpan(
+                                              text:
+                                                  "\n\nFecha límite de pago: ${userNotifications[index].limitDate}",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headlineMedium!
+                                                  .copyWith(
+                                                    color: Colors.red,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 10,
+                                                  ),
+                                            ),
+                                            TextSpan(
+                                              text:
+                                                  "\nFecha de pago anterior: ${userNotifications[index].paimentDate}",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headlineMedium!
+                                                  .copyWith(
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 10,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
