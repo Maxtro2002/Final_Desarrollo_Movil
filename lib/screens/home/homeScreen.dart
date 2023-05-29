@@ -33,7 +33,32 @@ class HomeScreen extends StatelessWidget {
                             userVehicles.length,
                             (index) => ElevatedButton(
                                   onPressed: () {
-                                    print("presionado la placa $index");
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text('Que desea hacer?'),
+                                          actions: [
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.red,
+                                              ),
+                                              child: const Text('Eliminar'),
+                                            ),
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: const Text('Actualizar'),
+                                              
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.white,

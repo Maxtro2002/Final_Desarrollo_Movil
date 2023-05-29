@@ -36,11 +36,36 @@ class NotificationsScreen extends StatelessWidget {
                             userNotifications.length,
                             (index) => ElevatedButton(
                               onPressed: () {
-                                    print("presionado la notificacion $index");
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: const Text('Que desea hacer?'),
+                                      actions: [
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.red,
+                                          ),
+                                          child: const Text('Eliminar'),
+                                        ),
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text('Actualizar'),
+                                        ),
+                                      ],
+                                    );
                                   },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.white,
-                                  ),
+                                );
+                                ;
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                              ),
                               child: Container(
                                 padding: EdgeInsets.all(12),
                                 child: Container(
