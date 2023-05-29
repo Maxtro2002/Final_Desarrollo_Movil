@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/entryPiont.dart';
 import 'package:rive_animation/models/notifications.dart';
 import 'package:rive_animation/screens/home/createPlate.dart';
 import 'package:rive_animation/screens/onboding/onboding_screen.dart';
@@ -44,18 +45,19 @@ class NotificationsScreen extends StatelessWidget {
                                       actions: [
                                         ElevatedButton(
                                           onPressed: () {
+                                            userNotifications.removeAt(index);
                                             Navigator.pop(context);
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const EntryPoint()),
+                                            );
                                           },
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: Colors.red,
                                           ),
                                           child: const Text('Eliminar'),
-                                        ),
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: const Text('Actualizar'),
                                         ),
                                       ],
                                     );

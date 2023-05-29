@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/entryPiont.dart';
 import 'package:rive_animation/models/placa.dart';
-
+import 'package:rive_animation/screens/home/homeScreen.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({Key? key}) : super(key: key);
@@ -40,12 +41,16 @@ class _MyFormPageState extends State<MyFormPage> {
           vehicleTyper: vehicleType,
           propetary: propietary));
 
-
       // Clear the form fields
       carPlateLetterController.clear();
       carPlateNumbersController.clear();
       vehicleTypeController.clear();
       propietaryController.clear();
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const EntryPoint()),
+      );
     }
   }
 

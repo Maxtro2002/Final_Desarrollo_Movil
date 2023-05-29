@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_animation/entryPiont.dart';
 import 'package:rive_animation/models/placa.dart';
 import 'package:rive_animation/screens/home/createPlate.dart';
 import 'package:rive_animation/screens/onboding/onboding_screen.dart';
@@ -43,6 +44,12 @@ class HomeScreen extends StatelessWidget {
                                               onPressed: () {
                                                 userVehicles.removeAt(index);
                                                 Navigator.pop(context);
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const EntryPoint()),
+                                                );
                                               },
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.red,
@@ -51,10 +58,16 @@ class HomeScreen extends StatelessWidget {
                                             ),
                                             ElevatedButton(
                                               onPressed: () {
+                                                userVehicles.removeAt(index);
                                                 Navigator.pop(context);
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const MyFormPage()),
+                                                );
                                               },
                                               child: const Text('Actualizar'),
-                                              
                                             ),
                                           ],
                                         );
