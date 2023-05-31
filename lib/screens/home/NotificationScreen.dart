@@ -41,7 +41,8 @@ class NotificationsScreen extends StatelessWidget {
                                   context: context,
                                   builder: (BuildContext context) {
                                     return AlertDialog(
-                                      title: const Text('Seguro que desea eliminar la notificación?'),
+                                      title: const Text(
+                                          'Seguro que desea eliminar la notificación?'),
                                       actions: [
                                         ElevatedButton(
                                           onPressed: () {
@@ -53,6 +54,13 @@ class NotificationsScreen extends StatelessWidget {
                                                   builder: (context) =>
                                                       const EntryPoint()),
                                             );
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              const SnackBar(
+                                                content: Text(
+                                                    "Se elimino correctamente la notificación"),
+                                              ),
+                                            );
                                           },
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: Colors.red,
@@ -60,11 +68,11 @@ class NotificationsScreen extends StatelessWidget {
                                           child: const Text('Eliminar'),
                                         ),
                                         ElevatedButton(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: const Text('Cancelar'),
-                                            ),
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text('Cancelar'),
+                                        ),
                                       ],
                                     );
                                   },

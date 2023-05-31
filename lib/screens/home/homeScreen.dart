@@ -92,6 +92,14 @@ class HomeScreen extends StatelessWidget {
                                                                       (context) =>
                                                                           const EntryPoint()),
                                                             );
+                                                            ScaffoldMessenger
+                                                                    .of(context)
+                                                                .showSnackBar(
+                                                              const SnackBar(
+                                                                content: Text(
+                                                                    "Se elimino correctamente la placa"),
+                                                              ),
+                                                            );
                                                           },
                                                         ),
                                                       ],
@@ -240,8 +248,8 @@ class HomeScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const MyFormPage()),
                   );
                 },
-                child: const Icon(Icons.add),
                 backgroundColor: Colors.green,
+                child: const Icon(Icons.add),
               ),
             ),
             Align(
