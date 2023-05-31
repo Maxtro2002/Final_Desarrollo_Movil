@@ -42,13 +42,61 @@ class HomeScreen extends StatelessWidget {
                                           actions: [
                                             ElevatedButton(
                                               onPressed: () {
-                                                userVehicles.removeAt(index);
-                                                Navigator.pop(context);
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const EntryPoint()),
+                                                showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (BuildContext context) {
+                                                    return AlertDialog(
+                                                      title: const Text(
+                                                          "¿Está seguro de que desea eliminar esta placa?"),
+                                                      actions: [
+                                                        TextButton(
+                                                          style: TextButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                Colors.green,
+                                                          ),
+                                                          child: const Text(
+                                                            "Cancelar",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                          onPressed: () {
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                        ),
+                                                        TextButton(
+                                                          style: TextButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                Colors.red,
+                                                          ),
+                                                          child: const Text(
+                                                              "Eliminar",
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .white)),
+                                                          onPressed: () {
+                                                            userVehicles
+                                                                .removeAt(
+                                                                    index);
+                                                            Navigator.pop(
+                                                                context);
+                                                            Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                  builder:
+                                                                      (context) =>
+                                                                          const EntryPoint()),
+                                                            );
+                                                          },
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
                                                 );
                                               },
                                               style: ElevatedButton.styleFrom(
@@ -67,7 +115,16 @@ class HomeScreen extends StatelessWidget {
                                                           const MyFormPage()),
                                                 );
                                               },
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.green,
+                                              ),
                                               child: const Text('Actualizar'),
+                                            ),
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: const Text('Cancelar'),
                                             ),
                                           ],
                                         );

@@ -41,7 +41,7 @@ class AlertsScreen extends StatelessWidget {
                                   context: context,
                                   builder: (BuildContext context) {
                                     return AlertDialog(
-                                      title: const Text('Que desea hacer?'),
+                                      title: const Text('Seguro que desea eliminar la alerta?'),
                                       actions: [
                                         ElevatedButton(
                                           onPressed: () {
@@ -59,6 +59,12 @@ class AlertsScreen extends StatelessWidget {
                                           ),
                                           child: const Text('Eliminar'),
                                         ),
+                                        ElevatedButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: const Text('Cancelar'),
+                                            ),
                                       ],
                                     );
                                   },
